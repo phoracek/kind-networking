@@ -126,7 +126,7 @@ function _networks::cleanup() {
 }
 
 function cluster::setup() {(
-    set -ex
+    set -e
 
     echo 'Please wait while the Kubernetes cluster is being set up'
     echo 'It should take approximately 2 minutes'  # TODO: test on katacoda with pull of the image
