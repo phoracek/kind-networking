@@ -113,7 +113,7 @@ function _networks::_cleanup_secondary() {
 }
 
 function _networks::setup() {
-    for i in $(seq 1 ${SECONDARY_NICS}); do
+    for i in $(seq 1 ${SECONDARY_NETWORKS}); do
         _networks::_configure_secondary net${i} eth${i} 192.168.${i}.1 192.168.${i}.2,192.168.${i}.254,12h
     done
 }
@@ -129,10 +129,10 @@ function cluster::setup() {(
     set -e
 
     echo 'Please wait while the Kubernetes cluster is being set up'
-    echo 'It should take approximately 2 minutes'  # TODO: test on katacoda with pull of the image
+    echo 'It should take approximately 5 minutes'
 
     WORKER_NODES=${WORKER_NODES:-0}
-    SECONDARY_NICS=${SECONDARY_NICS:-0}
+    SECONDARY_NETWORKS=${SECONDARY_NETWORKS:-0}
     NICS_PER_SECONDARY_NETWORK=${NICS_PER_SECONDARY_NETWORK:-1}
     export PATH=$(cluster::path)
 
