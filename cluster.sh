@@ -1,4 +1,3 @@
-KNMSTATE_VERSION=v0.13.0
 KIND_NODE_IMAGE=quay.io/phoracek/kind-node-networkmanager
 
 TMP_CONF=${PWD}/.etc
